@@ -1,8 +1,14 @@
 <script lang="ts">
+	import { navigating } from '$app/stores';
+	import PreloadingIndicator from '$lib/components/PreloadingIndicator.svelte';
 	import Search from '$lib/components/Search.svelte';
 
 	let { children } = $props();
 </script>
+
+{#if $navigating}
+	<PreloadingIndicator />
+{/if}
 
 <header>
 	<h1><a href="/">Movies!</a></h1>
