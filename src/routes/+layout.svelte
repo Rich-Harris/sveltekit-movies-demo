@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Search from '$lib/components/Search.svelte';
 
 	let { children } = $props();
