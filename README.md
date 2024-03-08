@@ -1,38 +1,27 @@
-# create-svelte
+# [sveltekit-movies-demo.vercel.app](https://sveltekit-movies-demo.vercel.app)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This is an adaptation of [remix-movies.pages.dev](https://remix-movies.pages.dev/) as requested by Ryan Florence:
 
-## Creating a project
+<img width="588" alt="image" src="https://github.com/Rich-Harris/sveltekit-movies-demo/assets/1162160/d8040868-9dd7-48fe-9843-199e06ab483a">
 
-If you're seeing this, you've probably already done this step. Congrats!
+It's mostly the same, but has a couple of differences:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- it's built with [SvelteKit](https://kit.svelte.dev) (I'll let you figure out which app has less code and smaller bundles)
+- the CSS is mobile-friendly
+- the search works without JavaScript
+- the search results have some ranking applied
+- the dataset is just a `.json` file, so that it runs anywhere
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## What does this show?
 
-## Developing
+Okay, the app is pretty basic. The original was showcasing Remix's brand new `clientLoader` functionality, which allows routes to be populated with data in memory (rather than going back to the server all the time).
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+SvelteKit has had this functionality since day one, in the form of [universal (as opposed to server) `load` functions](https://kit.svelte.dev/docs/load#universal-vs-server). The details of the design are slightly different, but the outcome is basically the same — by lazily downloading the entire dataset for the application, it's possible to search and navigate entirely client-side.
 
-```bash
-npm run dev
+## Disclaimers and credits
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+I built this in about 45 minutes while distracted by other things; I may have missed a couple of minor details.
 
-## Building
+Ideally the app would be running on the edge (since the data is just a `.json` file), but the data is large enough that it doesn't fit within the 4MB limit for edge functions on Vercel, where the demo is deployed. If I had longer to spend on it I would fix that, but for now it's being served from us-east-1.
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Credits and thanks to Ryan and the Remix team for the original demo, and for inviting comparisons from other frameworks.
