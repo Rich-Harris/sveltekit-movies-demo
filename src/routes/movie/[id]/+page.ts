@@ -10,12 +10,12 @@ export async function load({ fetch, params }) {
 	if (local) {
 		movie = local.find((movie) => movie.id === id);
 		if (!movie) error(404);
+	} else {
+		const response = await fetch(`/api/movie/${id}`);
+		if (!response.ok) error(response.status);
+
+		movie = (await response.json()) as Movie;
 	}
-
-	const response = await fetch(`/api/movie/${id}`);
-	if (!response.ok) error(response.status);
-
-	movie = (await response.json()) as Movie;
 
 	if (browser) {
 		// start loading thumbnail
