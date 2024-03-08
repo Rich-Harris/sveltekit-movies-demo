@@ -2,7 +2,11 @@
 
 This is an adaptation of [remix-movies.pages.dev](https://remix-movies.pages.dev/) as requested by Ryan Florence:
 
+---
+
 <img width="588" alt="image" src="https://github.com/Rich-Harris/sveltekit-movies-demo/assets/1162160/d8040868-9dd7-48fe-9843-199e06ab483a">
+
+---
 
 It's mostly the same, but has a couple of differences:
 
