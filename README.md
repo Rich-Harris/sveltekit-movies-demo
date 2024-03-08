@@ -4,7 +4,7 @@ This is an adaptation of [remix-movies.pages.dev](https://remix-movies.pages.dev
 
 ---
 
-<img width="588" alt="image" src="https://github.com/Rich-Harris/sveltekit-movies-demo/assets/1162160/d8040868-9dd7-48fe-9843-199e06ab483a">
+<a href="https://twitter.com/ryanflorence/status/1765540087029481566"><img width="588" alt="image" src="https://github.com/Rich-Harris/sveltekit-movies-demo/assets/1162160/d8040868-9dd7-48fe-9843-199e06ab483a"></a>
 
 ---
 
