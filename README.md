@@ -29,3 +29,7 @@ I built this in about 45 minutes while distracted by other things; I may have mi
 Ideally the app would be running on the edge (since the data is just a `.json` file), but the data is large enough that it doesn't fit within the 4MB limit for edge functions on Vercel, where the demo is deployed. If I had longer to spend on it I would fix that, but for now it's being served from us-east-1.
 
 Credits and thanks to Ryan and the Remix team for the original demo, and for inviting comparisons from other frameworks.
+
+## Run it yourself
+
+Clone the repo, install dependencies (this repo uses [pnpm](https://pnpm.io/) but it should work just fine with npm), and do `npm run dev`.
