@@ -4,15 +4,31 @@
 	let { movies }: { movies: Movie[] } = $props();
 </script>
 
-<ul style="padding:0 20px;min-height:1rem">
-	{#each movies as movie}
-		<li>
-			<div>
-				<h3 style="margin-bottom: 0px;">
-					<a href="/movie/{movie.id}">{movie.title}</a>
-				</h3>
-				<p style="margin-top: 0px;">{movie.extract}</p>
-			</div>
-		</li>
-	{/each}
-</ul>
+{#if movies.length > 0}
+	<ul>
+		{#each movies as movie}
+			<li>
+				<h3><a href="/movie/{movie.id}">{movie.title}</a></h3>
+				<p>{movie.extract}</p>
+			</li>
+		{/each}
+	</ul>
+{:else}
+	<span>No results</span>
+{/if}
+
+<style>
+	ul {
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+		margin: 0 0 1rem 0;
+	}
+
+	h3,
+	p {
+		margin: 0;
+	}
+</style>

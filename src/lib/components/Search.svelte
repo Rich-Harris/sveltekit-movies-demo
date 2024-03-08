@@ -56,19 +56,12 @@
 </form>
 
 {#if visible}
-	<div
-		role="presentation"
-		style="position:fixed;top:0;left:0;width:100vw;height:100vw;margin:auto;background:hsla(0, 100%, 100%, 0.9);z-index:100;overflow:hidden"
-		onclick={hide}
-	>
-		<div
-			style="background:white;width:600px;max-height:90vh;overflow:auto;margin:20px auto;border:solid 1px #ccc;border-radius:10px;box-shadow:0 0 10px #ccc"
-		>
+	<div class="modal-background" role="presentation" onclick={hide}>
+		<div class="search">
 			<form action="/search" method="get">
 				<input
 					placeholder="search"
 					type="search"
-					style="width:100%;padding:0.5rem 1rem;font-size:1.5em;position:sticky;top:0;border:none;border-bottom:solid 1px #ccc;outline:none"
 					name="q"
 					value={query}
 					oninput={async (e) => {
@@ -85,8 +78,53 @@
 					}}
 					use:focus
 				/>
-				<SearchResults movies={results} />
+
+				<div style="padding: 1rem">
+					<SearchResults movies={results} />
+				</div>
 			</form>
 		</div>
 	</div>
 {/if}
+
+<style>
+	input {
+		font: inherit;
+		width: 100%;
+	}
+
+	.modal-background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		padding: 0.5rem;
+		background: hsla(0, 100%, 100%, 0.9);
+		z-index: 100;
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+
+	.search {
+		background: white;
+		width: 100%;
+		max-width: 600px;
+		max-height: 90vh;
+		overflow: auto;
+		margin: 20px auto;
+		border: solid 1px #ccc;
+		border-radius: 10px;
+		box-shadow: 0 0 10px #ccc;
+	}
+
+	.search input {
+		padding: 0.5rem 1rem;
+		font-size: 1.5em;
+		position: sticky;
+		top: 0;
+		border: none;
+		border-bottom: solid 1px #ccc;
+		outline: none;
+	}
+</style>
