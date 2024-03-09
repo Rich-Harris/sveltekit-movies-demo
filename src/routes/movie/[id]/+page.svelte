@@ -4,6 +4,10 @@
 	let { data } = $props();
 </script>
 
+<svelte:head>
+	<title>{data.movie.title} ({data.movie.year}) • SvelteKit Movies Demo</title>
+</svelte:head>
+
 <div>
 	<img src={data.movie.thumbnail || missing} alt="movie poster" />
 	<h1>{data.movie.title} ({data.movie.year})</h1>

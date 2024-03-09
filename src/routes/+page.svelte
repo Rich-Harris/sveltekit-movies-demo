@@ -2,6 +2,10 @@
 	let { data } = $props();
 </script>
 
+<svelte:head>
+	<title>SvelteKit Movies Demo</title>
+</svelte:head>
+
 <p>Some random movies from the database:</p>
 
 <ul>
