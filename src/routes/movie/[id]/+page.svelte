@@ -1,9 +1,11 @@
 <script lang="ts">
+	import missing from './missing.svg';
+
 	let { data } = $props();
 </script>
 
 <div>
-	<img src={data.movie.thumbnail} alt="movie poster" />
+	<img src={data.movie.thumbnail || missing} alt="movie poster" />
 	<h1>{data.movie.title} ({data.movie.year})</h1>
 	<p>{data.movie.extract}</p>
 </div>
