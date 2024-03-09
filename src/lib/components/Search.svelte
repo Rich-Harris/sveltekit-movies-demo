@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { onNavigate } from '$app/navigation';
-	import { page } from '$app/stores';
 	import { local, search } from '$lib/data';
 	import type { Movie } from '$lib/types';
 	import SearchResults from './SearchResults.svelte';
 
-	let query = $state($page.url.searchParams.get('q') ?? '');
+	let query = $state('');
 	let visible = $state(false);
 	let results: Movie[] = $state([]);
 
@@ -17,17 +16,16 @@
 
 	function hide() {
 		visible = false;
+		query = '';
 	}
 
 	function focus(node: HTMLInputElement) {
 		setTimeout(() => node.focus());
 	}
 
-	onNavigate((navigation) => {
+	onNavigate(() => {
 		visible = false;
-		if (navigation.to?.url.pathname !== '/search') {
-			query = '';
-		}
+		query = '';
 	});
 </script>
 
@@ -47,7 +45,7 @@
 <form action="/search" method="GET">
 	<input
 		name="q"
-		type="search"
+		type="Search"
 		placeholder={browser
 			? `Search (${navigator.userAgent.includes('Macintosh') ? 'Cmd' : 'Ctrl'}-K)`
 			: 'Search'}
