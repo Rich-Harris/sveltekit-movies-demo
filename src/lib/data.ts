@@ -14,7 +14,7 @@ export function search(movies: Movie[], query: string | null) {
 	const results: Movie[] = [];
 	if (!query) return results;
 
-	const q = query.toLowerCase();
+	const q = query.toLowerCase().trim();
 
 	for (const movie of movies) {
 		if (movie.title.toLowerCase().includes(q) || movie.extract.toLowerCase().includes(q)) {
