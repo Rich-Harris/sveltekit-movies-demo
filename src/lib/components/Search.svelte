@@ -35,7 +35,7 @@
 			hide();
 		}
 
-		if (e.key === 'k' && e.metaKey) {
+		if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
 			visible = true;
 			e.preventDefault();
 		}
