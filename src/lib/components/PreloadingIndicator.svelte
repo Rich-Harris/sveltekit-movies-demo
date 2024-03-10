@@ -2,8 +2,6 @@
 	import { quadInOut } from 'svelte/easing';
 	import { tweened } from 'svelte/motion';
 
-	console.log('"HERE');
-
 	const p = tweened(0, {
 		easing: quadInOut
 	});
