@@ -4,4 +4,8 @@
 	let { data } = $props();
 </script>
 
+<svelte:head>
+	<title>Search results • SvelteKit Movies Demo</title>
+</svelte:head>
+
 <SearchResults movies={data.movies} />
